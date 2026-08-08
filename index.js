@@ -72,7 +72,11 @@ function strike(note) {
     ringing.add(voice);
     voice.addEventListener('ended', function () { ringing.delete(voice); }, { once: true });
     voice.addEventListener('error', function () { ringing.delete(voice); }, { once: true });
-    voice.currentTime = 0;
+    try {
+        voice.currentTime = 0;
+    } catch (e) {
+        // сэмпл ещё не загружен — играем с начала, это и так начало
+    }
     const playing = voice.play();
     if (playing) {
         playing.catch(function () { ringing.delete(voice); });
@@ -99,10 +103,16 @@ function releaseAll() {
     });
 }
 
+// Подсветка ставится до звука: если со звуком что-то пойдёт не так, колокол
+// всё равно отзовётся на нажатие, а не будет выглядеть неработающим.
 function hit(note) {
-    wakeAudio();
-    strike(note);
     press(note);
+    try {
+        wakeAudio();
+        strike(note);
+    } catch (e) {
+        // звук недоступен — само нажатие при этом продолжает работать
+    }
 }
 
 /* --- Клавиатура ---
