@@ -13,36 +13,51 @@
 </head>
 <body>
 
-<!-- Развес колоколов задан в style.css в единой координатной сетке 1330x900,
-     которая целиком масштабируется под размер окна. -->
-<main class="stage">
+<!-- <section>
+<div class="top-container">
+    Электронная звонница
+</div>
+</section> -->
 
-    <span class="label" data-label="podzvony">Подзвоны</span>
-    <span class="label" data-label="zazvony">Зазвоны</span>
-    <span class="label" data-label="blagovestniki">Благовестники</span>
+<div class="blago-container">
+    Благовестники <br><br>
+    <kbd class="blago-bells">V</kbd>
+    <kbd class="blago-bells">B</kbd>
+</div>
 
-    <kbd class="bell bell-dark" data-note="A" aria-label="Подзвон A">A</kbd>
-    <kbd class="bell bell-dark" data-note="S" aria-label="Подзвон S">S</kbd>
-    <kbd class="bell bell-dark" data-note="D" aria-label="Подзвон D">D</kbd>
+<div class="blago-container-w">
+    <kbd class="blago-bell-west">N</kbd>
+</div>
 
-    <kbd class="bell bell-dark" data-note="Q" aria-label="Подзвон Q">Q</kbd>
-    <kbd class="bell bell-dark" data-note="W" aria-label="Подзвон W">W</kbd>
-    <kbd class="bell bell-dark" data-note="E" aria-label="Подзвон E">E</kbd>
+<div class="blago-container-m">
+    <kbd class="blago-bell-mid">M</kbd>
+</div>
 
-    <kbd class="bell bell-dark" data-note="X" aria-label="Подзвон X">X</kbd>
-    <kbd class="bell bell-dark" data-note="Z" aria-label="Подзвон Z">Z</kbd>
-    <kbd class="bell bell-dark" data-note="C" aria-label="Подзвон C">C</kbd>
+<div class="podzv-container1">
+    <kbd class="podzv-bells1">Q</kbd>
+    <kbd class="podzv-bells1">W</kbd>
+    <kbd class="podzv-bells1">E</kbd>
+</div>
 
-    <kbd class="bell bell-dark" data-note="I" aria-label="Зазвон I">I</kbd>
-    <kbd class="bell bell-dark" data-note="O" aria-label="Зазвон O">O</kbd>
-    <kbd class="bell bell-dark" data-note="P" aria-label="Зазвон P">P</kbd>
+<div class="podzv-container2">
+    Подзвоны <br><br>
+    <kbd class="podzv-bells2">A</kbd>
+    <kbd class="podzv-bells2">S</kbd>
+    <kbd class="podzv-bells2">D</kbd>
+</div>
 
-    <kbd class="bell bell-gold" data-note="M" aria-label="Благовестник M">M</kbd>
-    <kbd class="bell bell-gold" data-note="N" aria-label="Благовестник N">N</kbd>
-    <kbd class="bell bell-gold" data-note="V" aria-label="Благовестник V">V</kbd>
-    <kbd class="bell bell-gold" data-note="B" aria-label="Благовестник B">B</kbd>
+<div class="podzv-container3">
+    <kbd class="podzv-bells3">X</kbd> <br><br>
+    <kbd class="podzv-bells3">Z</kbd> <br><br>
+    <kbd class="podzv-bells3">C</kbd>
+</div>
 
-</main>
+<div class="zazv-container">
+    Зазвоны <br><br>
+    <kbd class="zazv-bells">I</kbd>
+    <kbd class="zazv-bells">O</kbd>
+    <kbd class="zazv-bells">P</kbd>
+</div>
 
 <script src="index.js"></script>
 </body>
