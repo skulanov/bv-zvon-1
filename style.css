@@ -24,6 +24,7 @@ kbd {
     align-items: center;
     justify-content: center;
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+    pointer-events: auto;
     cursor: pointer;
     user-select: none;
     -webkit-user-select: none;
@@ -121,7 +122,10 @@ kbd.pressed {
     margin-right: clamp(12px, 1.95vw, 35px);
 }
 
-/* --- Расположение групп колоколов (геометрия развеса сохранена) --- */
+/* --- Расположение групп колоколов (геометрия развеса сохранена) ---
+   pointer-events:none на контейнерах не даёт их прозрачным/пустым
+   областям (в т.ч. там, где соседние группы визуально подходят близко
+   друг к другу) перехватывать клики мыши, предназначенные колоколу. */
 .podzv-container1 {
     width: max-content;
     height: 30%;
@@ -134,6 +138,7 @@ kbd.pressed {
     font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
+    pointer-events: none;
 }
 
 .podzv-container2 {
@@ -148,6 +153,7 @@ kbd.pressed {
     font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
+    pointer-events: none;
 }
 
 .podzv-container3 {
@@ -158,6 +164,7 @@ kbd.pressed {
     top: 52%;
     left: 10%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 
 .zazv-container {
@@ -172,6 +179,7 @@ kbd.pressed {
     font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
+    pointer-events: none;
 }
 
 .blago-container {
@@ -186,6 +194,7 @@ kbd.pressed {
     font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
+    pointer-events: none;
 }
 
 .blago-container-m {
@@ -199,6 +208,7 @@ kbd.pressed {
     font-family: 'Ruslan Display', sans-serif;
     font-size: clamp(14px, 1.95vw, 34px);
     text-align: center;
+    pointer-events: none;
 }
 
 .blago-container-w {
@@ -214,4 +224,5 @@ kbd.pressed {
     font-family: 'Ruslan Display', sans-serif;
     font-size: clamp(14px, 1.95vw, 34px);
     text-align: center;
+    pointer-events: none;
 }
