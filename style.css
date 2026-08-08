@@ -16,23 +16,12 @@ body {
     overflow-x: hidden;
 }
 
-.top-container {
-    width: max-content;
-    position: absolute;
-    top: 3%;
-    left: 50%;
-    transform: translate(-50%, 0%);
-    font-family: 'Ruslan Display', sans-serif;
-    font-size: 44px;
-    color: #4a2e05;
-    text-shadow: 0 2px 3px rgba(255, 255, 255, 0.35), 0 1px 0 #fff4c9;
-    text-align: center;
-}
-
 kbd {
     font-family: 'Lexend Zetta', sans-serif;
     text-align: center;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
     cursor: pointer;
     user-select: none;
@@ -74,24 +63,21 @@ kbd.pressed {
 }
 
 .blago-bells {
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     height: 20%;
-    width: 200px;
-    padding-top: 15%;
+    width: clamp(110px, 15.6vw, 280px);
 }
 
 .blago-bell-mid {
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     height: 25%;
-    width: 300px;
-    padding-top: 35%;
+    width: clamp(165px, 23.4vw, 420px);
 }
 
 .blago-bell-west {
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     height: 20%;
-    width: 250px;
-    padding-top: 25%;
+    width: clamp(140px, 19.5vw, 350px);
 }
 
 /* --- Подзвоны и зазвоны: тёмная бронза --- */
@@ -113,35 +99,31 @@ kbd.pressed {
 }
 
 .podzv-bells1 {
-    font-size: 20px;
+    font-size: clamp(11px, 1.56vw, 28px);
     height: 20%;
-    width: 120px;
-    padding-top: 7%;
-    margin-right: 25px;
+    width: clamp(65px, 9.4vw, 170px);
+    margin-right: clamp(12px, 1.95vw, 35px);
 }
 
 .podzv-bells2 {
-    font-size: 20px;
+    font-size: clamp(11px, 1.56vw, 28px);
     height: 25%;
-    width: 150px;
-    padding-top: 10%;
-    margin-right: 25px;
+    width: clamp(85px, 11.7vw, 210px);
+    margin-right: clamp(12px, 1.95vw, 35px);
 }
 
 .podzv-bells3 {
-    font-size: 20px;
+    font-size: clamp(11px, 1.56vw, 28px);
     height: 40%;
-    width: 180px;
-    padding-top: 25%;
-    margin-right: 25px;
+    width: clamp(100px, 14.1vw, 250px);
+    margin-right: clamp(12px, 1.95vw, 35px);
 }
 
 .zazv-bells {
-    font-size: 20px;
+    font-size: clamp(11px, 1.56vw, 28px);
     height: 30%;
-    width: 100px;
-    padding-top: 5%;
-    margin-right: 25px;
+    width: clamp(55px, 7.8vw, 140px);
+    margin-right: clamp(12px, 1.95vw, 35px);
 }
 
 /* --- Расположение групп колоколов (геометрия развеса сохранена) --- */
@@ -154,7 +136,7 @@ kbd.pressed {
     left: 28%;
     transform: translate(-30%, -70%);
     font-family: 'Ruslan Display', sans-serif;
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
 }
@@ -168,7 +150,7 @@ kbd.pressed {
     left: 33%;
     transform: translate(-50%, -200%);
     font-family: 'Ruslan Display', sans-serif;
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
 }
@@ -192,7 +174,7 @@ kbd.pressed {
     left: 65%;
     transform: translate(-50%, -50%);
     font-family: 'Ruslan Display', sans-serif;
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
 }
@@ -206,7 +188,7 @@ kbd.pressed {
     left: 40%;
     transform: translate(-50%, -50%);
     font-family: 'Ruslan Display', sans-serif;
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     color: #4a2e05;
     text-align: center;
 }
@@ -220,7 +202,7 @@ kbd.pressed {
     left: 40%;
     transform: translate(-50%, -50%);
     font-family: 'Ruslan Display', sans-serif;
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     text-align: center;
 }
 
@@ -231,8 +213,10 @@ kbd.pressed {
     position: absolute;
     top: 75%;
     left: 75%;
-    transform: translate(-50%, -50%);
+    /* --align-x is recalculated in index.js so that the "N" bell always
+       keeps its right edge aligned with the "P" bell, at any window size */
+    transform: translate(calc(-50% + var(--align-x, 0px)), -50%);
     font-family: 'Ruslan Display', sans-serif;
-    font-size: 25px;
+    font-size: clamp(14px, 1.95vw, 34px);
     text-align: center;
 }
